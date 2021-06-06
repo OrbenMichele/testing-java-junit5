@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
@@ -76,7 +77,7 @@ class IndexControllerTest {
     @Test
     void testAssumptionTrue() {
 
-        assumeTrue("MORBEN".equalsIgnoreCase(System.getenv("MORBEN_RUNTIME")));
+        assumeTrue("micheleorben".equalsIgnoreCase(System.getenv("USER")));
 
     }
 
@@ -84,6 +85,48 @@ class IndexControllerTest {
     void testAssumptionTrueAssumptionIsTrue() {
 
         assumeTrue("MORBEN".equalsIgnoreCase("MORBEN"));
+
+    }
+
+    @EnabledOnOs(OS.MAC)
+    @Test
+    void testMeOnMacOS() {
+
+    }
+
+    @EnabledOnOs(OS.WINDOWS)
+    @Test
+    void testMeOnWindows() {
+
+    }
+
+    @EnabledOnOs(OS.LINUX)
+    @Test
+    void testMeOnLinux() {
+
+    }
+
+    @EnabledOnJre(JRE.JAVA_8)
+    @Test
+    void testMeOnJava8() {
+
+    }
+
+    @EnabledOnJre(JRE.JAVA_11)
+    @Test
+    void testMeOnJava11() {
+
+    }
+
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "micheleorben")
+    @Test
+    void testIfUserMicheleOrben() {
+
+    }
+
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "mo")
+    @Test
+    void testIfUserMO() {
 
     }
 }
