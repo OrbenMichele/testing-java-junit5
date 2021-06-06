@@ -32,7 +32,7 @@ class IndexControllerTest {
                 () -> "Another Expensive Message " +
                 "Make me only if you have to");
 
-        assertThat(indexController.index()).isEqualTo("index");
+        assertThat(indexController.index()).isEqualTo("index"); //AssertJ
 
     }
 
