@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("model")
-class PersonTest {
+//@Tag("model")
+class PersonTest implements ModelTests{
 
     @Test
     void groupedAssertions(){

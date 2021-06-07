@@ -16,8 +16,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("controllers")
-class VetControllerTest {
+//@Tag("controllers")
+class VetControllerTest implements ControllersTest{
 
     VetService vetService;
     SpecialtyService specialtyService;
