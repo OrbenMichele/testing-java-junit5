@@ -1,5 +1,7 @@
 package morben.springframework.sfgpetclinic.model;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -30,5 +32,12 @@ class PersonTest implements ModelTests{
         assertAll("Test Pops Set",
                 () -> assertEquals("Joe", person.getFirstName(), "First name failed"),
                 () -> assertEquals("Last", person.getLastName(), "Last name failed"));
+    }
+
+    @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition}/{totalRepetitions}")
+    @DisplayName("My repeated test")
+    @Test
+    void myRepeatedTest() {
+        //todo - impl
     }
 }
