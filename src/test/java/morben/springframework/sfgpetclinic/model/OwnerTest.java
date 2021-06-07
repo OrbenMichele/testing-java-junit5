@@ -2,6 +2,8 @@ package morben.springframework.sfgpetclinic.model;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -29,4 +31,9 @@ class OwnerTest implements ModelTests{
         assertThat(owner.getCity(), is("Floripa")); //hamcrest
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"Spring", "Famework", "morben"})
+    void testValueSouce(String val) {
+        System.out.println(val);
+    }
 }
