@@ -1,5 +1,6 @@
 package morben.springframework.sfgpetclinic.model;
 
+import morben.springframework.sfgpetclinic.CustomArgsProvider;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -77,5 +78,13 @@ class OwnerTest implements ModelTests{
                 Arguments.of("FL", 14, 24),
                 Arguments.of("MI", 12, 23)
         );
+    }
+
+
+    @DisplayName("Custom Provider Test ")
+    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+    @ArgumentsSource(CustomArgsProvider.class)
+    void customProviderTest(String stateName, int val1, int val2) {
+        System.out.println(stateName + " - " + val1 + ":" + val2);
     }
 }
