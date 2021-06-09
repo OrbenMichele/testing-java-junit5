@@ -110,6 +110,8 @@
                     <argLine>
                         --illegal-access=permit
                     </argLine>
+                    <!--<groups>controllers</groups> runs only controllers-->
+                    <!--<excludedGroups>controllers</excludedGroups> runs everything but the controllers-->
                 </configuration>
                 <executions>
                     <execution>
